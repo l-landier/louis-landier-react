@@ -3,7 +3,7 @@ import React from 'react';
 import type { Node, StatelessFunctionalComponent } from 'react';
 
 const containerType = {
-  containerWide: 'container-wide',
+  container: 'container',
   containerShadow: 'white-bg border-r-s shadow-z-2',
   containerNavbar: 'navbar-container white-bg z-ind-16 sticky-element top-0',
 };

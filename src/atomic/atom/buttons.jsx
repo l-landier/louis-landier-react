@@ -3,8 +3,8 @@ import React from 'react';
 import type { Node, StatelessFunctionalComponent } from 'react';
 
 const buttonType = {
-  primary: 'primary-medium-button',
-  secondary: 'secondary-medium-button',
+  primary: 'primary-button',
+  secondary: 'secondary-button',
 };
 
 export type ButtonType = $Keys<typeof buttonType>;
@@ -38,7 +38,9 @@ export const Button: StatelessFunctionalComponent<Props> = ({
   return (
     // eslint-disable-next-line react/button-has-type
     <button className={styleClass} disabled={disabled} onClick={onClick} title={title} type={type} {...props}>
-      {children}
+      <span className="position-relative z-ind-2">
+        {children}
+      </span>
     </button>
   );
 };

@@ -3,7 +3,7 @@ export * from './buttons';
 export * from './titles';
 //export * from './input';
 //export * from './label';
-//export * from './link';
+export * from './link';
 export * from './picture';
 //export * from './select';
 //export * from './checkboxOrRadio';

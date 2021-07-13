@@ -1,4 +1,4 @@
-const alias = require('./alias').webpack;
+const alias = require('./alias');
 
 // This might seems stupid but eslint is easily confused by some new
 // syntaxes, we need a simple file, just with aliases for it to work

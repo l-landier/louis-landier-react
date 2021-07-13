@@ -2,7 +2,8 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const alias = require('./alias').webpack;
+const alias = require('./alias');
+const babelConfig = require('./babel.config');
 
 module.exports = {
   entry: {
@@ -10,15 +11,6 @@ module.exports = {
     style: './src/sass/style.scss',
   },
   //entry: path.join(__dirname, "src", "index.js"),
-  resolve: {
-    alias,
-    extensions: ['*', '.js', '.jsx', '.scss', '.svg', '.jpg', '.png', '.gif']
-  },
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: '[name].js',
-  },
-  //output: { path: path.join(__dirname, "build"), filename: "index.bundle.js" },
   mode: process.env.NODE_ENV || "development",
   resolve: { modules: [path.resolve(__dirname, "src"), "node_modules"] },
   devServer: { contentBase: path.join(__dirname, "src") },
@@ -26,8 +18,9 @@ module.exports = {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: ["babel-loader"],
+        exclude: /(node_modules)/,
+        loader: 'babel-loader',
+        options: babelConfig,
       },
       {
         test: /\.scss$/,
@@ -51,12 +44,22 @@ module.exports = {
       },
     ],
   },
+  resolve: {
+    alias,
+    extensions: ['*', '.js', '.jsx', '.scss', '.svg', '.jpg', '.png', '.gif']
+  },
+  output: {
+    path: path.resolve(__dirname, 'build'),
+    filename: '[name].js',
+  },
+  //output: { path: path.join(__dirname, "build"), filename: "index.bundle.js" },
   plugins: [
     new MiniCssExtractPlugin({
       filename: '[name].css',
     }),
     new HtmlWebpackPlugin({
       //template: path.join(__dirname, "src", "index.html"),
+      favicon: './src/img/rel-icon.png',
       template: './src/index.html',
     }),
   ],
