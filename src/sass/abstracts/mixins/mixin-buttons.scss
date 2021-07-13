@@ -1,0 +1,70 @@
+@mixin button($color-text, $background, $color-text-hover, $background-hover) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $primary-regular;
+  font-size: $body-font-size;
+  border-radius: $radius-button;
+  padding: $gutter $gutter * 2;
+  background: $background;
+  background-size: 100% 1px;
+  color: $color-text;
+  flex: 0 0 auto;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  -webkit-font-smoothing: antialiased;
+  text-decoration: none;
+  line-height: normal;
+  box-shadow: $gradient-primary;
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 0;
+    background: $background-hover;
+    z-index: 1;
+
+    transition: all 1s ease;
+  }
+
+  &:visited {
+    text-decoration: none;
+    outline-width: 0;
+    color: $color-text;
+    cursor: pointer;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+    outline-width: 0;
+    color: $color-text-hover;
+    background-color: $background-hover;
+    cursor: pointer;
+    @include transition-custom(all);
+
+    &::after {
+      width: 300%;
+      transition: all 1s ease;
+    }
+  }
+
+  &[disabled] {
+    background: $grey-dark;
+    color: $white;
+
+    &:hover {
+      cursor: not-allowed;
+      box-shadow: none;
+      background: $grey-dark;
+    }
+  }
+}
