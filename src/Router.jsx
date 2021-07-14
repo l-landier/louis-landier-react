@@ -6,15 +6,18 @@ import {
   Link
 } from "react-router-dom";
 
-//import { Dashboard } from './dashboard/Dashboard';
 import { Home } from './components/home.jsx';
+import { Footer } from 'atomic';
 
 export const CustomRouter = () => (
   <Router>
-    <Switch>
-      <Route path="/">
-        <Home />
-      </Route>
-    </Switch>
+    <div className="white-bg">
+      <Switch>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
+      <Footer />
+    </div>
   </Router>
 );

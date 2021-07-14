@@ -2,10 +2,10 @@
   @media (max-width: $screen-mobile) {
     max-height: 0;
     overflow: hidden;
-    position: absolute;
-    top: calc(100% - 1px);
+    //position: absolute;
+    //top: calc(100% - 1px);
     width: 100%;
-    left: 0;
+    //left: 0;
     z-index: 3;
 
     @include transition-custom(max-height);
@@ -16,12 +16,14 @@
   display: none;
 
   &:checked {
-    ~ {
+    ~ .navbar {
       .navbar-menu {
         max-height: 1000px;
 
         @include transition-custom(max-height);
       }
+    }
+    ~ {
       label .navbar-menu-icon {
         display: none;
 

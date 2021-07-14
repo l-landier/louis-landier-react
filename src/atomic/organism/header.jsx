@@ -1,39 +1,23 @@
 // @flow
-import React, { useContext } from 'react';
+import React from 'react';
 
-import { Button, Container, Title } from 'atomic';
+import { Button, Container, Title, Picture, NavBar } from 'atomic';
+import logoSmall from 'images/logo-small.svg';
 
 export const Header = () => {
-  const { history } = useContext(PortalContext);
   return (
-    <div className="grey-bg min-full-height">
-      <Header />
-      <Container
-        className="flex justify-space-between end-align padding-top-md padding-bottom-md"
-        classType="containerWide"
-      >
-        <div>
-          <Title className="margin-bottom-sm" classType="h1">
-            Accueil
-          </Title>
-          <p>Créer et gérer les différentes demandes</p>
-        </div>
-        <div>
-          <Button classType="primary" onClick={() => history.push('/new-application')}>
-            <i className="fas fa-plus margin-right-xs" />
-            Nouvelle demande
-          </Button>
-        </div>
+    <header className="white-bg position-sticky top-0 left-0 z-ind-3" id="nav-header">
+      <Container classType="container" className="display-flex justify-space-between flex-wrap center-align padding-top-xs padding-bottom-xs position-relative navbar-container-fix">
+        <Picture
+          className="image-responsive display-flex"
+          imgAlt="logo louis landier"
+          imgDesktop={logoSmall}
+          imgMobile={logoSmall}
+          imgTablet={logoSmall}
+          imgWidth="38"
+        />
+        <NavBar />
       </Container>
-      <Container className="padding-bottom-xl" classType="containerWide">
-        <div className="flex-tablet-desktop row">
-          <SidebarContainer />
-          <div className="col-xs-12 col-sm-9 float-none">
-            <TableContainer />
-          </div>
-        </div>
-        <ModalContainer />
-      </Container>
-    </div>
+    </header>
   );
 };

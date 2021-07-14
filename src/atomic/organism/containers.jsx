@@ -3,8 +3,8 @@ import React from 'react';
 import type { Node, StatelessFunctionalComponent } from 'react';
 
 const containerType = {
-  containerWide: 'container-wide',
-  containerShadow: 'white-bg border-r-s shadow-z-2',
+  container: 'container',
+  sepSection: 'padding-top-xl padding-bottom-xl',
   containerNavbar: 'navbar-container white-bg z-ind-16 sticky-element top-0',
 };
 
@@ -26,6 +26,13 @@ export const Container: StatelessFunctionalComponent<Props> = ({
 
   if (className && className !== '') {
     styleClass = `${styleClass} ${className}`;
+  }
+
+  let trySepSection = (containerType) =>
+  {
+    if (containerType === 'sepSection') {
+        return true;
+    }
   }
 
   return (
