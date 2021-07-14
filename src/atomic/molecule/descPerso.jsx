@@ -6,6 +6,9 @@ import profilPhoto from 'images/profil-photo.png';
 import profilPhotoM from 'images/profil-photo-m.png';
 
 export const DescPerso = () => {
+  let today = new Date();
+  let currentDate = today.getFullYear();
+  let myDate = currentDate - '1990';
   return (
     <section className="padding-top-xl padding-bottom-xl">
       <Container classType="container">
@@ -23,7 +26,7 @@ export const DescPerso = () => {
           </div>
           <div className="col-xs-12 col-sm-8">
             <p className="margin-bottom-xs">
-              Je m’appelle Louis, j’ai 31 ans, j’ai fait des études en gestion au lycée,
+              Je m’appelle Louis, j’ai {myDate} ans, j’ai fait des études en gestion au lycée,
               où j’ai acquis des notions d’intégration, via des cours d’HTML, ce qui m’a
               convaincu de me diriger vers cette filière. J’ai par la suite étudié l’info-graphie
               pendant un an, puis j’ai effectué une formation de 2 ans en tant qu’intégrateur web,

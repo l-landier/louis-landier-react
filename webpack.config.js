@@ -39,14 +39,14 @@ module.exports = {
         ],
       },
       {
-        test: /\.(woff2?|ttf|woff|eot|svg|jpg|png|gif|mp3)$/,
+        test: /\.(woff2?|ttf|woff|eot|svg|jpg|png|gif|mp3|pdf)$/,
         use: ["file-loader"],
       },
     ],
   },
   resolve: {
     alias,
-    extensions: ['*', '.js', '.jsx', '.scss', '.svg', '.jpg', '.png', '.gif']
+    extensions: ['*', '.js', '.jsx', '.scss', '.svg', '.jpg', '.png', '.gif', '.pdf']
   },
   output: {
     path: path.resolve(__dirname, 'build'),

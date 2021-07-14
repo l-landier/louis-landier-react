@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 
 import { Home } from './components/home.jsx';
+import { Footer } from 'atomic';
 
 export const CustomRouter = () => (
   <Router>
@@ -16,11 +17,7 @@ export const CustomRouter = () => (
           <Home />
         </Route>
       </Switch>
-      <footer>
-        <p className="margin-top-md text-align-center padding-xs">
-          © 2021 LOUIS LANDIER | Tous droits réservés.
-        </p>
-      </footer>
+      <Footer />
     </div>
   </Router>
 );
