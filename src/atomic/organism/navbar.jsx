@@ -5,17 +5,21 @@ import { Button, Container, Link, Title, Picture } from 'atomic';
 
 const listNav = [
   {
-    item: 'Accueil'
+    item: 'Accueil',
+    link: '/'
   },
   {
-    item: 'Expérience'
+    item: 'Expérience',
+    link: '/creation'
   },
   {
-    item: 'Contact'
+    item: 'Contact',
+    link: '/creation'
   },
 ]
 
 export const NavBar = () => {
+
   return (
     <>
       <input className="navbar-menu-check" type="checkbox" id="navbar-menu-check" />
@@ -26,9 +30,9 @@ export const NavBar = () => {
       </label>
       <nav className="display-flex center-align full-width-m navbar">
         <ul className="display-flex-tablet-desktop justify-space-between col-xs-12 navbar-menu white-bg">
-          {listNav.map(({ item }) => (
+          {listNav.map(({ item, link }) => (
             <li key={item}>
-              <Link className="dark-text padding-xs padding-left-sm padding-right-sm link margin-top-sm margin-bottom-sm smooth-scroll nav-link" href="#">
+              <Link className="dark-text padding-xs padding-left-sm padding-right-sm link margin-top-sm margin-bottom-sm" href={link}>
                 {item}
               </Link>
             </li>

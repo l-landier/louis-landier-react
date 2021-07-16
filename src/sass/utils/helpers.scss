@@ -1,0 +1,68 @@
+.supports-android {
+  @media (max-width: $screen-tablet-min) {
+    @supports (-webkit-touch-callout: none) {
+      /* CSS specific to iOS devices */
+      display: none;
+    }
+  }
+}
+
+.supports-ios {
+  @media (max-width: $screen-tablet-min) {
+    @supports not (-webkit-touch-callout: none) {
+      /* CSS for other than iOS devices */
+      display: none;
+    }
+  }
+}
+
+.tablet-hidden {
+  @media (max-width: $screen-tablet) {
+    display: none;
+  }
+}
+
+.hidden-mobile {
+  @media (max-width: $screen-mobile) {
+    display: none;
+  }
+}
+
+.hidden-laptop-tablet {
+  @media (min-width: $screen-mobile-min) {
+    display: none;
+  }
+}
+
+.hidden-laptop {
+  @media (min-width: $screen-tablet-min) {
+    display: none;
+  }
+}
+
+.visible-laptop {
+  @media (max-width: $screen-laptop) {
+    display: none;
+  }
+}
+
+.visible-mobile {
+  @media (max-width: $screen-mobile) {
+    display: block;
+  }
+}
+
+.visible-tablet {
+  @media (max-width: $screen-tablet) {
+    display: block;
+  }
+}
+
+/* keep last to override every rule */
+.block-element {
+  display: block;
+}
+
+.hidden-element {
+  display: none;
+}
