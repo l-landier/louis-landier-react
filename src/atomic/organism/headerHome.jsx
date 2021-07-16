@@ -1,11 +1,12 @@
 // @flow
 import React from 'react';
 
-import { Button, Container, Title } from 'atomic';
+import { Button, Container, Link, Title } from 'atomic';
+import { animationScrollTop, smoothScroll } from 'utils/animationScrollTop';
 
 export const HeaderHome = () => {
   return (
-    <section className="third-bg">
+    <section className="third-bg" id="Accueil">
       <Container classType="container" className="">
         <div className="row padding-top-md padding-bottom-md display-flex-tablet-desktop center-align">
           <div className="col-xs-12 col-sm-6 col-md-6 display-flex center-align">
@@ -15,12 +16,12 @@ export const HeaderHome = () => {
                 Intégrateur web, avec une formation de designer web.
               </Title>
               <div className="col-xs-12 col-sm-12 col-md-7 padding-0 display-flex justify-space-between">
-                <Button classType="secondary">
+                <Link classType="secondary" className="smooth-scroll" data-scroll-to="monExperience">
                   Mon expérience
-                </Button>
-                <Button classType="primary">
+                </Link>
+                <Link classType="primary" className="smooth-scroll" data-scroll-to="meContacter">
                   Me contacter
-                </Button>
+                </Link>
               </div>
             </div>
           </div>

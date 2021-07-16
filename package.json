@@ -35,6 +35,7 @@
   "dependencies": {
     "@babel/preset-flow": "^7.14.5",
     "core-js": "^3.15.2",
+    "emailjs-com": "^3.2.0",
     "flow": "^0.2.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
