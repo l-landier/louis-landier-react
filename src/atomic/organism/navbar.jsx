@@ -6,15 +6,15 @@ import { Button, Container, Link, Title, Picture } from 'atomic';
 const listNav = [
   {
     item: 'Accueil',
-    link: '/'
+    link: 'accueil'
   },
   {
     item: 'Expérience',
-    link: '/creation'
+    link: 'experience'
   },
   {
     item: 'Contact',
-    link: '/creation'
+    link: 'contact'
   },
 ]
 
@@ -32,7 +32,7 @@ export const NavBar = () => {
         <ul className="display-flex-tablet-desktop justify-space-between col-xs-12 navbar-menu white-bg">
           {listNav.map(({ item, link }) => (
             <li key={item}>
-              <Link className="dark-text padding-xs padding-left-sm padding-right-sm link margin-top-sm margin-bottom-sm" href={link}>
+              <Link className="dark-text padding-xs padding-left-sm padding-right-sm link margin-top-sm margin-bottom-sm" href={`#${link}`}>
                 {item}
               </Link>
             </li>

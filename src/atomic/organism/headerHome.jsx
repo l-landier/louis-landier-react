@@ -6,7 +6,7 @@ import { animationScrollTop, smoothScroll } from 'utils/animationScrollTop';
 
 export const HeaderHome = () => {
   return (
-    <section className="third-bg" id="Accueil">
+    <section className="third-bg" id="accueil">
       <Container classType="container" className="">
         <div className="row padding-top-md padding-bottom-md display-flex-tablet-desktop center-align">
           <div className="col-xs-12 col-sm-6 col-md-6 display-flex center-align">

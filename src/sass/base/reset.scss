@@ -17,6 +17,7 @@
 
 html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  scroll-behavior: smooth;
   height: 100%;
 }
 
@@ -48,6 +49,7 @@ textarea {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+  touch-action: manipulation;
 
   &:focus,
   &:visited {
@@ -72,6 +74,7 @@ input[type='number'] {
 a {
   text-decoration: none;
   font-family: $primary-regular;
+  touch-action: manipulation;
 
   &:hover,
   &:focus {
