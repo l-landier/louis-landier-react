@@ -53,6 +53,9 @@ module.exports = {
     filename: '[name].js',
   },
   //output: { path: path.join(__dirname, "build"), filename: "index.bundle.js" },
+  devServer: {
+    historyApiFallback: true,
+  },
   plugins: [
     new MiniCssExtractPlugin({
       filename: '[name].css',
