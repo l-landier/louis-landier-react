@@ -43,7 +43,7 @@ const timelineContent = [
 
 export const Timeline = () => {
   return (
-    <section className="padding-top-xl padding-bottom-xl" id="monExperience">
+    <section className="padding-top-xl padding-bottom-xl" id="experience">
       <Container classType="container">
         <Title classType="h3" tagType="h3" className="margin-bottom-l">
           Mon expérience

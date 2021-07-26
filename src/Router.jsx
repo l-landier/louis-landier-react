@@ -8,20 +8,20 @@ import {
 
 import { Home } from './components/home.jsx';
 import { Creation } from './components/creation.jsx';
+import { NoMatch } from './components/noMatch.jsx';
 import { Footer } from 'atomic';
 
 export const CustomRouter = () => (
   <Router>
     <Switch>
       <div className="white-bg">
-        <Route path="/">
-          <Home />
-        </Route>
-        <Route path="/creation">
-          <Creation />
-        </Route>
+        <Route exact path="/" component={Home} />
+        <Route path="/creation" component={Creation} />
+        {/*
+        <Route path="*" component={NoMatch} />
+        */}
+        <Footer />
       </div>
-      <Footer />
     </Switch>
   </Router>
 );
