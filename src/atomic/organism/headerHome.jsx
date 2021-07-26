@@ -16,10 +16,10 @@ export const HeaderHome = () => {
                 Intégrateur web, avec une formation de designer web.
               </Title>
               <div className="col-xs-12 col-sm-12 col-md-7 padding-0 display-flex justify-space-between">
-                <Link classType="secondary" className="smooth-scroll" data-scroll-to="monExperience">
+                <Link classType="secondary" href="#experience">
                   Mon expérience
                 </Link>
-                <Link classType="primary" className="smooth-scroll" data-scroll-to="meContacter">
+                <Link classType="primary" href="#contact">
                   Me contacter
                 </Link>
               </div>

@@ -299,7 +299,8 @@ select:-webkit-autofill {
   line-height: normal;
   box-shadow: 0 15px 25px 6px rgba(220, 129, 96, 0.3);
   position: relative;
-  overflow: hidden; }
+  overflow: hidden;
+  transition: all 0.5s ease; }
   .primary-button::after {
     content: '';
     display: block;
@@ -355,6 +356,7 @@ select:-webkit-autofill {
   box-shadow: 0 15px 25px 6px rgba(220, 129, 96, 0.3);
   position: relative;
   overflow: hidden;
+  transition: all 0.5s ease;
   border: solid 1px #F9012D; }
   .secondary-button::after {
     content: '';
@@ -486,6 +488,7 @@ select:-webkit-autofill {
 
 .header-inte, .header-ui {
   color: #FFFFFF;
+  display: block;
   font-size: 210px;
   line-height: normal;
   text-shadow: 3px 8px 32px rgba(108, 108, 108, 0.1);

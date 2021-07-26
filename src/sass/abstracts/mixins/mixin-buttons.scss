@@ -19,6 +19,7 @@
   box-shadow: $gradient-primary;
   position: relative;
   overflow: hidden;
+  @include transition-custom(all);
 
   &::after {
     content: '';
