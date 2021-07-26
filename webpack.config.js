@@ -10,8 +10,8 @@ module.exports = {
     index: './src/index.jsx',
     style: './src/sass/style.scss',
   },
-  //entry: path.join(__dirname, "src", "index.js"),
-  mode: process.env.NODE_ENV || "development",
+  mode: "production",
+  //mode: "development",
   resolve: { modules: [path.resolve(__dirname, "src"), "node_modules"] },
   devServer: { contentBase: path.join(__dirname, "src") },
   module: {
@@ -52,7 +52,6 @@ module.exports = {
     path: path.resolve(__dirname, 'build'),
     filename: '[name].js',
   },
-  //output: { path: path.join(__dirname, "build"), filename: "index.bundle.js" },
   devServer: {
     historyApiFallback: true,
   },
@@ -61,7 +60,6 @@ module.exports = {
       filename: '[name].css',
     }),
     new HtmlWebpackPlugin({
-      //template: path.join(__dirname, "src", "index.html"),
       favicon: './src/img/rel-icon.png',
       template: './src/index.html',
     }),
