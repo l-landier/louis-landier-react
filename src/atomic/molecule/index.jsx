@@ -1,4 +1,4 @@
-export * from './dropdown';
+export * from './dropDown';
 export * from './descPerso';
 export * from './timeline';
 export * from './threeColonmBlock';
