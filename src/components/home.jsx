@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 
-import { FormEmail, Header, HeaderHome, DescPerso, ThreeColonmBlock, Timeline, ListPastille, ProInfo } from 'atomic';
+import { FormEmail, Header, HeaderHome, DescPerso, Footer, ThreeColonmBlock, Timeline, ListPastille, ProInfo } from 'atomic';
 
 import sassSvg from 'images/sass.svg';
 import cssSvg from 'images/css3.svg';
@@ -73,7 +73,7 @@ const titleBlockHome = "Mes domaines d'expertise";
 
 export const Home = () => {
   return (
-    <>
+    <div className="white-bg">
       <Header />
       <HeaderHome />
       <DescPerso />
@@ -82,6 +82,7 @@ export const Home = () => {
       <ListPastille listSkills={listSkillsHome} titleList={titleListHome} />
       <FormEmail />
       <ProInfo />
-    </>
+      <Footer />
+    </div>
   );
 };
