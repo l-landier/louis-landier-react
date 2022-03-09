@@ -22,7 +22,7 @@
   @include transition-custom(all);
 
   &::after {
-    content: '';
+    content: "";
     display: block;
     position: absolute;
     top: 0;
@@ -61,11 +61,16 @@
   &[disabled] {
     background: $grey-dark;
     color: $white;
+    box-shadow: none;
 
     &:hover {
       cursor: not-allowed;
       box-shadow: none;
       background: $grey-dark;
+
+      &::after {
+        display: none;
+      }
     }
   }
 }

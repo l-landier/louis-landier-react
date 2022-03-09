@@ -1,31 +1,31 @@
 // @flow
-import React from 'react';
-import { useState } from 'react';
-import { send } from 'emailjs-com';
+import React from "react";
+import { useState } from "react";
+import { send } from "emailjs-com";
 
-import { Button, Container, Title, Input } from 'atomic';
+import { Button, Container, Title, Input } from "atomic";
 
 export const FormEmail = () => {
   const [toSend, setToSend] = useState({
-    from_name: '',
-    from_lastname: '',
-    message: '',
-    reply_to: '',
+    from_name: "",
+    from_lastname: "",
+    message: "",
+    reply_to: "",
   });
 
   const onSubmit = (e) => {
     e.preventDefault();
     send(
-      'service_f2kasxn',
-      'template_fopbwao',
+      "service_f2kasxn",
+      "template_fopbwao",
       toSend,
-    'user_UAZLJFhisw9FQ7Kpwn1OQ'
+      "user_UAZLJFhisw9FQ7Kpwn1OQ"
     )
       .then((response) => {
-        console.log('SUCCESS!', response.status, response.text);
+        alert(`${response.text} L'email à été envoyé.`);
       })
       .catch((err) => {
-        console.log('FAILED...', err);
+        alert(`Une erreur c'est produite. ${err}`);
       });
   };
 
@@ -48,9 +48,9 @@ export const FormEmail = () => {
               <Input
                 classType="custom"
                 className="col-xs-12"
-                type='text'
-                name='from_name'
-                placeholder='Nom*'
+                type="text"
+                name="from_name"
+                placeholder="Nom*"
                 value={toSend.from_name}
                 onChange={handleChange}
                 required
@@ -63,9 +63,9 @@ export const FormEmail = () => {
               <Input
                 classType="custom"
                 className="col-xs-12"
-                type='text'
-                name='from_lastname'
-                placeholder='Prénom*'
+                type="firstname"
+                name="from_lastname"
+                placeholder="Prénom*"
                 value={toSend.from_lastname}
                 onChange={handleChange}
                 required
@@ -78,9 +78,9 @@ export const FormEmail = () => {
               <Input
                 classType="custom"
                 className="col-xs-12"
-                type='text'
-                name='reply_to'
-                placeholder='Email*'
+                type="email"
+                name="reply_to"
+                placeholder="Email*"
                 value={toSend.reply_to}
                 onChange={handleChange}
                 required
@@ -93,18 +93,22 @@ export const FormEmail = () => {
               <Input
                 classType="custom"
                 className="col-xs-12"
-                type='textarea'
-                name='message'
-                placeholder='Votre message*'
+                type="textarea"
+                name="message"
+                placeholder="Votre message*"
                 value={toSend.message}
                 onChange={handleChange}
-                cols='33'
-                rows='6'
+                cols="33"
+                rows="6"
                 required
               />
             </div>
           </div>
-          <Button type="submit" classType="primary" className="margin-top-sm submit-form-email">
+          <Button
+            type="submit"
+            classType="primary"
+            className="margin-top-sm submit-form-email"
+          >
             Envoyer l'email
           </Button>
         </form>
