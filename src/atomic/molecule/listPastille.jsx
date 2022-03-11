@@ -1,10 +1,10 @@
 // @flow
-import React from 'react';
+import React from "react";
 
-import { Container, Picture, Title } from 'atomic';
+import { Container, Picture, Title } from "atomic";
 
 type Props = {
-  listSkills?: { [key: string]: ?s},
+  listSkills?: { [key: string]: ?s },
   titleList?: string,
 };
 
@@ -19,9 +19,19 @@ export const ListPastille: StatelessFunctionalComponent<Props> = ({
         {titleList}
       </Title>
       <div className="display-flex flex-wrap justify-center">
-        {listSkills.map(listElem => (
-          <div className="col-xs-6 col-sm-3 display-flex justify-center margin-bottom-xl" key={listElem.src}>
-            <img src={listElem.src} className="responsive-img" alt={listElem.alt} width="150" height="auto" loading="lazy" />
+        {listSkills.map((listElem) => (
+          <div
+            className="col-xs-5 col-sm-3 display-flex justify-center margin-bottom-xl"
+            key={listElem.src}
+          >
+            <img
+              src={listElem.src}
+              className="responsive-img"
+              alt={listElem.alt}
+              width="150"
+              height="auto"
+              loading="lazy"
+            />
           </div>
         ))}
       </div>
@@ -30,6 +40,6 @@ export const ListPastille: StatelessFunctionalComponent<Props> = ({
 );
 
 ListPastille.defaultProps = {
-  listSkills: '',
-  titleList: '',
+  listSkills: "",
+  titleList: "",
 };

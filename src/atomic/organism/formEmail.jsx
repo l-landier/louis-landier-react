@@ -3,7 +3,7 @@ import React from "react";
 import { useState } from "react";
 import { send } from "emailjs-com";
 
-import { Button, Container, Title, Input } from "atomic";
+import { Button, ButtonSendEmail, Container, Title, Input } from "atomic";
 
 export const FormEmail = () => {
   const [toSend, setToSend] = useState({
@@ -23,9 +23,11 @@ export const FormEmail = () => {
     )
       .then((response) => {
         alert(`${response.text} L'email à été envoyé.`);
+        <ButtonSendEmail reponse={response} />;
       })
       .catch((err) => {
         alert(`Une erreur c'est produite. ${err}`);
+        <ButtonSendEmail reponse={err} />;
       });
   };
 
@@ -111,6 +113,7 @@ export const FormEmail = () => {
           >
             Envoyer l'email
           </Button>
+          <ButtonSendEmail onClick={onSubmit} />
         </form>
       </Container>
     </Container>

@@ -3,7 +3,7 @@
   display: block;
   font-size: 210px;
   line-height: normal;
-  text-shadow: 3px 8px 32px rgba(108, 108, 108, .1);
+  text-shadow: 3px 8px 32px rgba(108, 108, 108, 0.1);
   font-family: $primary-bold;
   z-index: 2;
 
@@ -35,9 +35,13 @@
   left: 50%;
   transform: translate(-40%, -40%);
   z-index: 1;
-  font-size: 170px;
+  font-size: 250px;
   font-family: $primary-bold;
   color: $primary;
+
+  @media (max-width: $screen-tablet) {
+    font-size: 170px;
+  }
 
   @media (max-width: $screen-mobile) {
     font-size: 130px;
