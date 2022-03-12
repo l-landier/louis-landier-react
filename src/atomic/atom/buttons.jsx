@@ -1,10 +1,11 @@
 // @flow
-import React from 'react';
-import type { Node, StatelessFunctionalComponent } from 'react';
+import React from "react";
+import type { Node, StatelessFunctionalComponent } from "react";
 
 const buttonType = {
-  primary: 'primary-button',
-  secondary: 'secondary-button',
+  primary: "primary-button",
+  secondary: "secondary-button",
+  success: "success-button",
 };
 
 export type ButtonType = $Keys<typeof buttonType>;
@@ -16,7 +17,7 @@ type Props = {
   disabled?: boolean,
   onClick?: Function,
   title?: string,
-  type?: 'submit' | 'button',
+  type?: "submit" | "button",
 };
 
 export const Button: StatelessFunctionalComponent<Props> = ({
@@ -29,27 +30,32 @@ export const Button: StatelessFunctionalComponent<Props> = ({
   type,
   ...props
 }: Props) => {
-  let styleClass = classType in buttonType ? buttonType[classType] : '';
+  let styleClass = classType in buttonType ? buttonType[classType] : "";
 
-  if (className && className !== '') {
+  if (className && className !== "") {
     styleClass = `${styleClass} ${className}`;
   }
 
   return (
     // eslint-disable-next-line react/button-has-type
-    <button className={styleClass} disabled={disabled} onClick={onClick} title={title} type={type} {...props}>
-      <span className="position-relative z-ind-2">
-        {children}
-      </span>
+    <button
+      className={styleClass}
+      disabled={disabled}
+      onClick={onClick}
+      title={title}
+      type={type}
+      {...props}
+    >
+      <span className="position-relative z-ind-2">{children}</span>
     </button>
   );
 };
 
 Button.defaultProps = {
-  className: '',
-  classType: '',
+  className: "",
+  classType: "",
   disabled: false,
   onClick: () => null,
-  title: '',
-  type: 'button',
+  title: "",
+  type: "button",
 };

@@ -1,14 +1,14 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-const alias = require('./alias');
-const babelConfig = require('./babel.config');
+const alias = require("./alias");
+const babelConfig = require("./babel.config");
 
 module.exports = {
   entry: {
-    index: './src/index.jsx',
-    style: './src/sass/style.scss',
+    index: "./src/index.jsx",
+    style: "./src/sass/style.scss",
   },
   mode: "production",
   //mode: "development",
@@ -19,23 +19,25 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules)/,
-        loader: 'babel-loader',
+        loader: "babel-loader",
         options: babelConfig,
       },
       {
         test: /\.scss$/,
         use: [
           MiniCssExtractPlugin.loader,
-          'css-loader',
+          "css-loader",
           {
-            loader: 'postcss-loader',
+            loader: "postcss-loader",
             options: {
               postcssOptions: {
-                plugins: [['autoprefixer', { grid: true, Browserslist: ['>1%'] }]],
+                plugins: [
+                  ["autoprefixer", { grid: true, Browserslist: [">1%"] }],
+                ],
               },
             },
           },
-          'sass-loader',
+          "sass-loader",
         ],
       },
       {
@@ -46,22 +48,32 @@ module.exports = {
   },
   resolve: {
     alias,
-    extensions: ['*', '.js', '.jsx', '.scss', '.svg', '.jpg', '.png', '.gif', '.pdf']
+    extensions: [
+      "*",
+      ".js",
+      ".jsx",
+      ".scss",
+      ".svg",
+      ".jpg",
+      ".png",
+      ".gif",
+      ".pdf",
+    ],
   },
   output: {
-    path: path.resolve(__dirname, 'build'),
-    filename: '[name].js',
+    path: path.resolve(__dirname, "build"),
+    filename: "[name].js",
   },
   devServer: {
     historyApiFallback: true,
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '[name].css',
+      filename: "[name].css",
     }),
     new HtmlWebpackPlugin({
-      favicon: './src/img/rel-icon.png',
-      template: './src/index.html',
+      favicon: "./src/img/rel-icon.png",
+      template: "./src/index.html",
     }),
   ],
 };

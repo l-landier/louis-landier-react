@@ -21,4 +21,20 @@
   @media (max-width: $screen-laptop) {
     font-size: $body-font-size;
   }
+
+  &[disabled] {
+    background: $grey-dark;
+    color: $white;
+    box-shadow: none;
+
+    &:hover {
+      cursor: not-allowed;
+      box-shadow: none;
+      background: $grey-dark;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
 }
