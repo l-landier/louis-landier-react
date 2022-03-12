@@ -19,7 +19,7 @@
   box-shadow: $gradient-primary;
   position: relative;
   overflow: hidden;
-  @include transition-custom(all);
+  transition: all 1s ease;
 
   &::after {
     content: "";
@@ -50,7 +50,7 @@
     color: $color-text-hover;
     background-color: $background-hover;
     cursor: pointer;
-    @include transition-custom(all);
+    transition: all 1s ease;
 
     &::after {
       width: 300%;

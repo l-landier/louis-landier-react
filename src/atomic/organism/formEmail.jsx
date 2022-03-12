@@ -13,6 +13,8 @@ export const FormEmail = () => {
     reply_to: "",
   });
 
+  const [disabledButton, setDisabledButton] = useState(false);
+
   const onSubmit = (e) => {
     e.preventDefault();
     send(
@@ -22,15 +24,41 @@ export const FormEmail = () => {
       "user_UAZLJFhisw9FQ7Kpwn1OQ"
     )
       .then((response) => {
-        alert(`${response.text} L'email à été envoyé.`);
+        return setDisabledButton(true);
       })
       .catch((err) => {
-        alert(`Une erreur c'est produite. ${err}`);
+        console.log(`Une erreur c'est produite. ${err}`);
+        return setDisabledButton(false);
       });
   };
 
   const handleChange = (e) => {
     setToSend({ ...toSend, [e.target.name]: e.target.value });
+  };
+
+  const ButtonSendEmail = () => {
+    return (
+      <Button
+        type="submit"
+        classType="primary"
+        className="margin-top-sm submit-form-email"
+      >
+        Envoyer l'email
+      </Button>
+    );
+  };
+
+  const ButtonDisableSendEmail = () => {
+    return (
+      <Button
+        type="submit"
+        classType="success"
+        className="margin-top-sm submit-form-email"
+        disabled="disabled"
+      >
+        L'email à été envoyé ✔
+      </Button>
+    );
   };
 
   return (
@@ -54,6 +82,7 @@ export const FormEmail = () => {
                 value={toSend.from_name}
                 onChange={handleChange}
                 required
+                disabled={disabledButton ? "disabled" : ""}
               />
             </div>
             <div className="col-xs-12 col-sm-6 margin-bottom-sm">
@@ -69,6 +98,7 @@ export const FormEmail = () => {
                 value={toSend.from_lastname}
                 onChange={handleChange}
                 required
+                disabled={disabledButton ? "disabled" : ""}
               />
             </div>
             <div className="col-xs-12 margin-bottom-sm">
@@ -84,6 +114,7 @@ export const FormEmail = () => {
                 value={toSend.reply_to}
                 onChange={handleChange}
                 required
+                disabled={disabledButton ? "disabled" : ""}
               />
             </div>
             <div className="col-xs-12">
@@ -101,16 +132,11 @@ export const FormEmail = () => {
                 cols="33"
                 rows="6"
                 required
+                disabled={disabledButton ? "disabled" : ""}
               />
             </div>
           </div>
-          <Button
-            type="submit"
-            classType="primary"
-            className="margin-top-sm submit-form-email"
-          >
-            Envoyer l'email
-          </Button>
+          {disabledButton ? <ButtonDisableSendEmail /> : <ButtonSendEmail />}
         </form>
       </Container>
     </Container>

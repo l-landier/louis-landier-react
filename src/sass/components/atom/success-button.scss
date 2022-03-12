@@ -1,0 +1,21 @@
+.success-button {
+  @include button($white, $gradient-button, $success, $success);
+
+  &[disabled] {
+    background: $success;
+    color: $white;
+    font-weight: bold;
+    box-shadow: none;
+
+    &:hover {
+      cursor: not-allowed;
+      box-shadow: none;
+      background: $success;
+      font-weight: bold;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
