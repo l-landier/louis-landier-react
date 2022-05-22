@@ -42,7 +42,10 @@ module.exports = {
       },
       {
         test: /\.(woff2?|ttf|woff|eot|svg|jpg|png|gif|mp3|pdf)$/,
-        use: ["file-loader"],
+        loader: "file-loader",
+        options: {
+          name: "[name].[ext]",
+        },
       },
     ],
   },
