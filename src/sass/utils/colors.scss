@@ -8,30 +8,21 @@
 }
 
 .dark-red {
-  color: $primary-dark;
-
-  @media (prefers-color-scheme: $dark-mode) {
-    color: $white;
-  }
+  color: var(--primary-dark);
 }
 
 /* Background-color */
 .white-bg {
-  background-color: $white;
+  background-color: var(--container-bg);
 
   @media (prefers-color-scheme: $dark-mode) {
-    background: $dark-bg;
-    color: $white;
+    background: var(--container-bg);
+    color: var(--white);
   }
 }
 
 .third-bg {
-  background-color: $third;
-
-  @media (prefers-color-scheme: $dark-mode) {
-    background: $dark-orange;
-    color: $white;
-  }
+  background-color: var(--third);
 }
 
 .messages-error {

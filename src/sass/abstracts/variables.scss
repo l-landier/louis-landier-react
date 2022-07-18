@@ -19,6 +19,21 @@ $dark-orange: #dc8160;
 $dark-bg: #2c3340;
 $dark-mode: dark;
 
+:root {
+    --white: #ffffff;
+    --third: #fceae2;
+    --container-bg: #ffffff;
+    --grey-light: #f7f7f7;
+    --primary-dark: #870017;
+
+    @media (prefers-color-scheme: $dark-mode) {
+        --third: #dc8160;
+        --container-bg: #2c3340;
+        --grey-light: var(--white);
+        --primary-dark: var(--white);
+      }
+}
+
 // Font-Weight //
 $font-weight-light: 100;
 $font-weight-normal: 400;
