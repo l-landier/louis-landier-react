@@ -1,10 +1,6 @@
 /* Text-color */
 .dark-text {
-  color: $black;
-
-  @media (prefers-color-scheme: $dark-mode) {
-    color: $white;
-  }
+  color: var(--white-text);
 }
 
 .dark-red {
@@ -14,11 +10,7 @@
 /* Background-color */
 .white-bg {
   background-color: var(--container-bg);
-
-  @media (prefers-color-scheme: $dark-mode) {
-    background: var(--container-bg);
-    color: var(--white);
-  }
+  color: var(--white-text);
 }
 
 .third-bg {
