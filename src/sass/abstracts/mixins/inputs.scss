@@ -3,12 +3,13 @@
   -moz-appearance: none;
   appearance: none;
   display: inline-block;
-  background: $white;
+  background: var(--white-bg);
   border-radius: $radius-button;
   padding: $gutter 2 * $gutter;
   border: 0;
-  box-shadow: $shadow-input;
+  box-shadow: var(--shadow-input);
   border: solid 1px $none;
+  color: var(--white-text);
 
   &:active,
   &:focus {

@@ -31,13 +31,10 @@ body {
   max-width: 100%;
   overflow-x: hidden;
   content-visibility: auto;
+  background: var(--container-bg);
 
   @media (max-width: $screen-laptop) {
     font-size: $regular-font-size;
-  }
-
-  @media (prefers-color-scheme: $dark-mode) {
-    background: $dark-bg;
   }
 }
 
