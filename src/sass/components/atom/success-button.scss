@@ -1,9 +1,9 @@
 .success-button {
-  @include button($white, $gradient-button, $success, $success);
+  @include button(var(--white), $gradient-button, $success, $success);
 
   &[disabled] {
     background: $success;
-    color: $white;
+    color: var(--white);
     font-weight: bold;
     box-shadow: none;
 

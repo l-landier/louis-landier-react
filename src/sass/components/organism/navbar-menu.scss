@@ -17,7 +17,7 @@
 
   &:checked {
     ~ .navbar {
-      .navbar-menu {
+      &-menu {
         max-height: 1000px;
 
         @include transition-custom(max-height);

@@ -1,4 +1,4 @@
 .secondary-button {
-  @include button($primary, $white, $white, $primary);
-  border: solid 1px $primary;
+  @include button(var(--primary), var(--white), var(--white), var(--primary));
+  border: solid 1px var(--primary);
 }

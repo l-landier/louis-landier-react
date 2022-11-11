@@ -24,7 +24,7 @@ html {
 body {
   font-family: $primary-regular;
   font-size: $body-font-size;
-  color: $black;
+  color: var(--black);
   line-height: normal;
   -webkit-font-smoothing: antialiased;
   margin: 0;
@@ -76,7 +76,7 @@ a {
   &:hover,
   &:focus {
     text-decoration: none;
-    color: $primary;
+    color: var(--primary);
     cursor: pointer;
   }
 }
@@ -128,14 +128,14 @@ textarea,
 select {
   &:-webkit-autofill {
     -webkit-box-shadow: 0 1px 1px 0 rgba(103, 110, 144, 0.19), 0 0 1px 0 rgba(103, 110, 144, 0.95);
-    -webkit-text-fill-color: $black;
-    background-color: $white;
+    -webkit-text-fill-color: var(--black);
+    background-color: var(--white);
 
     &:hover,
     &:focus {
       -webkit-box-shadow: 0 1px 1px 0 rgba(103, 110, 144, 0.19), 0 0 1px 0 rgba(103, 110, 144, 0.95);
-      -webkit-text-fill-color: $black;
-      background-color: $white;
+      -webkit-text-fill-color: var(--black);
+      background-color: var(--white);
     }
   }
 }

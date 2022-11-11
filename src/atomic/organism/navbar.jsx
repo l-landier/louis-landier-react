@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 
-import { Button, Container, Link, Title, Picture } from 'atomic';
+import { Link, ToggleDarkMode } from 'atomic';
 
 const listNav = [
   {
@@ -18,7 +18,7 @@ const listNav = [
   },
 ]
 
-export const NavBar = () => {
+export const NavBar = (handleClick) => {
 
   return (
     <>
@@ -38,6 +38,7 @@ export const NavBar = () => {
             </li>
           ))}
         </ul>
+        <ToggleDarkMode />
       </nav>
     </>
   );

@@ -18,9 +18,9 @@
 }
 
 .messages-error {
-  color: $primary;
+  color: var(--primary);
 }
 
 .inputs-error {
-  border-color: $primary;
+  border-color: var(--primary);
 }
