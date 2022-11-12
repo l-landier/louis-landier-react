@@ -16,7 +16,7 @@ export const ToggleDarkMode: StatelessFunctionalComponent<Props> = ({
   }: Props) => {
 
     return (
-        <div className="display-flex justify-space-between align-center" {...props}>
+        <div className="display-flex justify-space-between align-center toggle-dark-mode align-self-start-t" {...props}>
             <Picture
                 className="responsive-img display-flex svg-invert"
                 imgAlt="logo louis landier"

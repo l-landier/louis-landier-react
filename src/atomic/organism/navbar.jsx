@@ -35,8 +35,8 @@ export const NavBar: StatelessFunctionalComponent<Props> = ({
         <span className="navbar-menu-icon" />
         <span className="navbar-menu-icon" />
       </label>
-      <nav className="display-flex center-align full-width-m navbar">
-        <ul className="display-flex-tablet-desktop justify-space-between col-xs-12 navbar-menu white-bg">
+      <nav className="display-flex center-align flex-column-t full-width-m navbar white-bg">
+        <ul className="display-flex-tablet-desktop justify-space-between col-xs-12 navbar-menu">
           {listNav.map(({ item, link }) => (
             <li key={item}>
               <Link className="dark-text padding-xs padding-left-sm padding-right-sm link margin-top-sm margin-bottom-sm" href={link}>

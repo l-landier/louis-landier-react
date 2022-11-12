@@ -73,10 +73,11 @@ const titleBlockHome = "Mes domaines d'expertise";
 
 export const Home = () => {
   const [theme, setTheme] = useState(
-    localStorage.getItem('dark-mode-enable') || 'light-mode-enable'
+    //localStorage.getItem('dark-mode-enable') || 'light-mode-enable'
+    localStorage.getItem('dark-mode-enable')
   );
   const toggleTheme = () => {
-    if (theme === 'light-mode-enable') {
+    if (theme === 'light-mode-enable' || theme === null) {
       setTheme('dark-mode-enable');
     } else {
       setTheme('light-mode-enable');
@@ -84,7 +85,6 @@ export const Home = () => {
   };
   useEffect(() => {
     localStorage.setItem('theme', theme);
-    document.body.className = theme;
   }, [theme]);
 
   const ToggleModeInput = () => {
@@ -97,7 +97,7 @@ export const Home = () => {
   };
 
   return (
-    <div className="white-bg">
+    <div className={`white-bg ${theme}`}>
       <Header children={<ToggleModeInput />} />
       <HeaderHome />
       <DescPerso />

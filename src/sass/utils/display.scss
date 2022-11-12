@@ -100,6 +100,13 @@
   align-self: flex-start;
 }
 
+.align-self-start-t {
+  @media (max-width: $screen-tablet) {
+    align-self: flex-start;
+  }
+}
+
+
 .no-shrink {
   flex-shrink: 0;
 }
