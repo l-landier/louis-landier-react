@@ -1,33 +1,33 @@
 // @flow
 import React from 'react';
+import type { StatelessFunctionalComponent } from "react";
 
 import { Picture } from 'atomic';
 import sun from 'images/sun.svg';
 import moon from 'images/moon.svg';
 
-export const ToggleDarkMode = () => {
+type Props = {
+  children: () => Node
+};
+
+export const ToggleDarkMode: StatelessFunctionalComponent<Props> = ({
+    children,
+    ...props
+  }: Props) => {
+
     return (
-        <div className="display-flex justify-space-between align-center">
+        <div className="display-flex justify-space-between align-center" {...props}>
             <Picture
-                className="image-responsive display-flex"
+                className="responsive-img display-flex svg-invert"
                 imgAlt="logo louis landier"
                 imgDesktop={sun}
                 imgMobile={sun}
                 imgTablet={sun}
                 imgWidth="20"
             />
-            <input type="checkbox" className="d-none toggle-custom-checkbox" id="toggle-dark" />
-            <label className="toggle-custom margin-left-xs margin-right-xs" htmlFor="toggle-dark"></label>
-            {/*
-            <ThemeContext.Consumer>
-                {({theme, toggleTheme}) => (
-                    <label className="toggle-custom margin-left-xs margin-right-xs" htmlFor="toggle-dark" onClick={toggleTheme}></label>
-                )}
-            </ThemeContext.Consumer>
-                */}
-            
+            {children}
             <Picture
-                className="image-responsive display-flex"
+                className="responsive-img display-flex svg-invert"
                 imgAlt="logo louis landier"
                 imgDesktop={moon}
                 imgMobile={moon}
@@ -37,3 +37,8 @@ export const ToggleDarkMode = () => {
         </div>
     );
 }
+
+ToggleDarkMode.defaultProps = {
+    children: "",
+};
+  

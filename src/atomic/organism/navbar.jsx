@@ -1,7 +1,12 @@
 // @flow
 import React from 'react';
+import type { StatelessFunctionalComponent } from "react";
 
 import { Link, ToggleDarkMode } from 'atomic';
+
+type Props = {
+  children: () => Node
+};
 
 const listNav = [
   {
@@ -18,7 +23,9 @@ const listNav = [
   },
 ]
 
-export const NavBar = (handleClick) => {
+export const NavBar: StatelessFunctionalComponent<Props> = ({
+  children
+}: Props) => {
 
   return (
     <>
@@ -38,7 +45,7 @@ export const NavBar = (handleClick) => {
             </li>
           ))}
         </ul>
-        <ToggleDarkMode />
+        <ToggleDarkMode children={children} />
       </nav>
     </>
   );

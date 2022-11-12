@@ -29,6 +29,27 @@ $black: #0f1221;
   --grey-light: #{$grey-light};
   --primary-dark: #870017;
   --shadow-input: 0 12px 33px 0 rgba(108, 108, 108, 0.2);
+  --svg-dark-mode: invert(0);
+
+  // UNCHANGER COLORS //
+  --none: #{$none};
+  --white: #{$white};
+  --black: #{$black};
+  --primary: #{$primary};
+  --secondary: #{$secondary};
+
+  @media (prefers-color-scheme: light) {
+    // COLORS LIGHT MODE //
+    --white: #{$white};
+    --white-bg: #{$white};
+    --white-text: #{$black};
+    --third: #{$third};
+    --container-bg: #{$white};
+    --grey-light: #{$grey-light};
+    --primary-dark: #870017;
+    --shadow-input: 0 12px 33px 0 rgba(108, 108, 108, 0.2);
+    --svg-dark-mode: invert(0);
+  }
 
   // COLORS DARK MODE //
   @media (prefers-color-scheme: dark) {
@@ -39,7 +60,22 @@ $black: #0f1221;
       --grey-light: var(--white);
       --primary-dark: var(--white);
       --shadow-input: 0 15px 25px 6px rgba(220, 129, 96, 0.3);
+      --svg-dark-mode: invert(1);
   }
+}
+
+.light-mode-enable {
+  // COLORS LIGHT MODE //
+  --white: #{$white};
+  --white-bg: #{$white};
+  --white-text: #{$black};
+  --third: #{$third};
+  --container-bg: #{$white};
+  --grey-light: #{$grey-light};
+  --primary-dark: #870017;
+  --shadow-input: 0 12px 33px 0 rgba(108, 108, 108, 0.2);
+  --svg-dark-mode: invert(0);
+  
 }
 
 .dark-mode-enable {
@@ -50,6 +86,7 @@ $black: #0f1221;
   --grey-light: var(--white);
   --primary-dark: var(--white);
   --shadow-input: 0 15px 25px 6px rgba(220, 129, 96, 0.3);
+  --svg-dark-mode: invert(1);
 }
 
 // Font-Weight //
