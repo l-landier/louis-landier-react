@@ -37,7 +37,6 @@ export const smoothScroll = () => {
     const elem = scrollElems[i];
 
     elem.addEventListener('click', e => {
-      console.log('ah que coucou');
       e.preventDefault();
       const scrollElemId = e.currentTarget.dataset.scrollTo;
       const scrollEndElem = document.getElementById(scrollElemId);
