@@ -1,3 +1,7 @@
 .responsive-img {
   max-width: 100%;
 }
+
+.svg-invert {
+  filter: var(--svg-dark-mode);
+}

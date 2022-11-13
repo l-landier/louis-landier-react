@@ -3,7 +3,7 @@
   width: 3 * $gutter;
   height: 4px;
   border-radius: $radius-button;
-  background: $primary;
+  background: var(--primary);
   @include transition-custom(all);
 
   &:nth-child(2n) {

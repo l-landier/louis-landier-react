@@ -3,17 +3,18 @@
   -moz-appearance: none;
   appearance: none;
   display: inline-block;
-  background: $white;
+  background: var(--white-bg);
   border-radius: $radius-button;
   padding: $gutter 2 * $gutter;
   border: 0;
-  box-shadow: $shadow-input;
-  border: solid 1px $none;
+  box-shadow: var(--shadow-input);
+  border: solid 1px var(--none);
+  color: var(--white-text);
 
   &:active,
   &:focus {
     box-shadow: $shadow-input-focus;
-    border: solid 1px $primary;
+    border: solid 1px var(--primary);
     outline: 0;
   }
 
@@ -24,7 +25,7 @@
 
   &[disabled] {
     background: $grey-dark;
-    color: $white;
+    color: var(--white);
     box-shadow: none;
 
     &:hover {
@@ -36,5 +37,27 @@
         display: none;
       }
     }
+  }
+}
+
+@mixin toggle-custom {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 20px;
+  background-color: var(--secondary);
+  padding: calc(#{$gutter} / 5);
+  height: calc(2 * #{$gutter});
+  width: calc(4 * #{$gutter});
+  @include transition-custom(all);
+
+  &::before {
+    content: '';
+    display: block;
+    height: calc((2 * #{$gutter} - 4px));
+    width: calc((2 * #{$gutter} - 4px));
+    background-color: var(--white);
+    border-radius: 100%;
+    @include transition-custom(all);
   }
 }

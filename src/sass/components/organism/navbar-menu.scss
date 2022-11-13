@@ -1,4 +1,4 @@
-.navbar-menu {
+.navbar {
   @media (max-width: $screen-mobile) {
     max-height: 0;
     overflow: hidden;
@@ -12,16 +12,21 @@
   }
 }
 
+.toggle-dark-mode {
+  @media (max-width: $screen-mobile) {
+    margin-bottom: 2 * $gutter;
+    padding-left: 3 * $gutter;
+  }
+}
+
 .navbar-menu-check {
   display: none;
 
   &:checked {
-    ~ .navbar {
-      .navbar-menu {
-        max-height: 1000px;
+  ~ .navbar {
+      max-height: 1000px;
 
-        @include transition-custom(max-height);
-      }
+      @include transition-custom(max-height);
     }
     ~ {
       label .navbar-menu-icon {

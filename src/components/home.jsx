@@ -1,5 +1,5 @@
 // @flow
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { FormEmail, Header, HeaderHome, DescPerso, Footer, ThreeColonmBlock, Timeline, ListPastille, ProInfo } from 'atomic';
 
@@ -72,9 +72,32 @@ const colonmItemHome = [
 const titleBlockHome = "Mes domaines d'expertise";
 
 export const Home = () => {
+  const [theme, setTheme] = useState(
+    localStorage.getItem('dark-mode-enable')
+  );
+  const toggleTheme = () => {
+    if (theme === 'light-mode-enable' || theme === null) {
+      setTheme('dark-mode-enable');
+    } else {
+      setTheme('light-mode-enable');
+    }
+  };
+  useEffect(() => {
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const ToggleModeInput = () => {
+    return (
+      <div>
+        <input type="checkbox" className="d-none toggle-custom-checkbox" id="toggle-dark" defaultChecked={theme === 'dark-mode-enable' ? 'checked' : ''} />
+        <label className="toggle-custom margin-left-xs margin-right-xs" htmlFor="toggle-dark" onClick={toggleTheme}></label>
+      </div>
+    );
+  };
+
   return (
-    <div className="white-bg">
-      <Header />
+    <div className={`white-bg ${theme}`}>
+      <Header children={<ToggleModeInput />} />
       <HeaderHome />
       <DescPerso />
       <ThreeColonmBlock colonmItem={colonmItemHome} titleBlock={titleBlockHome} />

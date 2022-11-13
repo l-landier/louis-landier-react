@@ -11,7 +11,7 @@
     right: 0;
     height: 2px;
     width: 0;
-    background: $primary;
+    background: var(--primary);
 
     @include transition-custom(all);
   }
@@ -26,7 +26,7 @@
   &:hover,
   &:focus,
   &:active {
-    color: $primary;
+    color: var(--primary);
     &::before {
       width: 100%;
 

@@ -1,9 +1,16 @@
 .input-custom {
   @include input-custom;
+}
 
-  @media (prefers-color-scheme: $dark-mode) {
-    background: $black;
-    box-shadow: $gradient-primary;
-    color: $white;
+.toggle-custom {
+  @include toggle-custom;
+
+  &-checkbox {
+    &:checked {
+      ~ .toggle-custom {
+        justify-content: flex-end;
+        background-color: var(--primary);
+      }
+    }
   }
 }

@@ -1,10 +1,11 @@
 // @flow
-import React from 'react';
+import React, { Component, useEffect } from 'react';
 
-import { Button, Container, Link, Title } from 'atomic';
+import { Container, Link, Title } from 'atomic';
 import { animationScrollTop, smoothScroll } from 'utils/animationScrollTop';
 
 export const HeaderHome = () => {
+
   return (
     <section className="third-bg" id="accueil">
       <Container classType="container" className="">

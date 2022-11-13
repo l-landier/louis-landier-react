@@ -1,23 +1,93 @@
 // COLORS //
-
 $none: transparent;
-$white: #ffffff;
-$black: #0f1221;
 $primary: #f9012d;
 $secondary: #f9830f;
 $third: #fceae2;
-$primary-dark: #870017;
 $grey-light: #f7f7f7;
 $grey-dark: #a8afbc;
 $success: #029c00;
 $gradient-button: linear-gradient(0.75turn, $secondary, $primary);
 $gradient-button-hover: linear-gradient(0.75turn, $secondary, $none);
 $gradient-primary: 0 15px 25px 6px rgba(220, 129, 96, 0.3);
+$white: #ffffff;
+$black: #0f1221;
 
-// COLORS DARK MODE //
-$dark-orange: #dc8160;
-$dark-bg: #2c3340;
-$dark-mode: dark;
+:root {
+  // UNCHANGER COLORS //
+  --none: #{$none};
+  --white: #{$white};
+  --black: #{$black};
+  --primary: #{$primary};
+  --secondary: #{$secondary};
+
+  // COLORS LIGHT MODE //
+  --white: #{$white};
+  --white-bg: #{$white};
+  --white-text: #{$black};
+  --third: #{$third};
+  --container-bg: #{$white};
+  --grey-light: #{$grey-light};
+  --primary-dark: #870017;
+  --shadow-input: 0 12px 33px 0 rgba(108, 108, 108, 0.2);
+  --svg-dark-mode: invert(0);
+
+  // UNCHANGER COLORS //
+  --none: #{$none};
+  --white: #{$white};
+  --black: #{$black};
+  --primary: #{$primary};
+  --secondary: #{$secondary};
+
+  @media (prefers-color-scheme: light) {
+    // COLORS LIGHT MODE //
+    --white: #{$white};
+    --white-bg: #{$white};
+    --white-text: #{$black};
+    --third: #{$third};
+    --container-bg: #{$white};
+    --grey-light: #{$grey-light};
+    --primary-dark: #870017;
+    --shadow-input: 0 12px 33px 0 rgba(108, 108, 108, 0.2);
+    --svg-dark-mode: invert(0);
+  }
+
+  // COLORS DARK MODE //
+  @media (prefers-color-scheme: dark) {
+      --white-bg: #{$black};
+      --white-text: #{$white};
+      --third: #dc8160;
+      --container-bg: #2c3340;
+      --grey-light: var(--white);
+      --primary-dark: var(--white);
+      --shadow-input: 0 15px 25px 6px rgba(220, 129, 96, 0.3);
+      --svg-dark-mode: invert(1);
+  }
+}
+
+.light-mode-enable {
+  // COLORS LIGHT MODE //
+  --white: #{$white};
+  --white-bg: #{$white};
+  --white-text: #{$black};
+  --third: #{$third};
+  --container-bg: #{$white};
+  --grey-light: #{$grey-light};
+  --primary-dark: #870017;
+  --shadow-input: 0 12px 33px 0 rgba(108, 108, 108, 0.2);
+  --svg-dark-mode: invert(0);
+  
+}
+
+.dark-mode-enable {
+  --white-bg: #{$black};
+  --white-text: #{$white};
+  --third: #dc8160;
+  --container-bg: #2c3340;
+  --grey-light: var(--white);
+  --primary-dark: var(--white);
+  --shadow-input: 0 15px 25px 6px rgba(220, 129, 96, 0.3);
+  --svg-dark-mode: invert(1);
+}
 
 // Font-Weight //
 $font-weight-light: 100;
@@ -42,7 +112,6 @@ $screen-laptop-min: ($screen-laptop + 1);
 $screen-desktop: 1200px;
 
 // SHADOWS //
-$shadow-input: 0 12px 33px 0 rgba(108, 108, 108, 0.2);
 $shadow-input-focus: 0 12px 33px 0 rgba(108, 108, 108, 0.6);
 
 // FONTS //
