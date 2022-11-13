@@ -73,7 +73,6 @@ const titleBlockHome = "Mes domaines d'expertise";
 
 export const Home = () => {
   const [theme, setTheme] = useState(
-    //localStorage.getItem('dark-mode-enable') || 'light-mode-enable'
     localStorage.getItem('dark-mode-enable')
   );
   const toggleTheme = () => {
