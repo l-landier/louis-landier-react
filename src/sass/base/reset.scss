@@ -46,6 +46,20 @@ textarea {
   line-height: inherit;
   touch-action: manipulation;
 
+  /* Change Autocomplete styles in Chrome */
+  &:-webkit-autofill {
+    -webkit-box-shadow: 0 1px 1px 0 rgba(103, 110, 144, 0.19), 0 0 1px 0 rgba(103, 110, 144, 0.95);
+    -webkit-text-fill-color: var(--black);
+    background-color: var(--white);
+
+    &:hover,
+    &:focus {
+      -webkit-box-shadow: 0 1px 1px 0 rgba(103, 110, 144, 0.19), 0 0 1px 0 rgba(103, 110, 144, 0.95);
+      -webkit-text-fill-color: var(--black);
+      background-color: var(--white);
+    }
+  }
+
   &:focus,
   &:visited {
     text-decoration: none;
@@ -53,19 +67,20 @@ textarea {
   }
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  /* display: none; <- Crashes Chrome on hover */
-  -webkit-appearance: none;
-  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
-}
+input {
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+  }
 
-input[type='number'] {
-  -moz-appearance: textfield; /* Firefox */
+  &[type='number'] {
+    -moz-appearance: textfield; /* Firefox */
+  }
 }
 
 // Links
-
 a {
   text-decoration: none;
   font-family: $primary-regular;
@@ -117,23 +132,5 @@ label {
   &:active,
   &:focus {
     cursor: pointer;
-  }
-}
-
-/* Change Autocomplete styles in Chrome */
-input,
-textarea,
-select {
-  &:-webkit-autofill {
-    -webkit-box-shadow: 0 1px 1px 0 rgba(103, 110, 144, 0.19), 0 0 1px 0 rgba(103, 110, 144, 0.95);
-    -webkit-text-fill-color: var(--black);
-    background-color: var(--white);
-
-    &:hover,
-    &:focus {
-      -webkit-box-shadow: 0 1px 1px 0 rgba(103, 110, 144, 0.19), 0 0 1px 0 rgba(103, 110, 144, 0.95);
-      -webkit-text-fill-color: var(--black);
-      background-color: var(--white);
-    }
   }
 }
