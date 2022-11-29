@@ -72,31 +72,27 @@ const colonmItemHome = [
 const titleBlockHome = "Mes domaines d'expertise";
 
 export const Home = () => {
-  const [theme, setTheme] = useState(
-    localStorage.getItem('dark-mode-enable')
-  );
+  const [dark, setDark] = React.useState(localStorage.getItem('dark-mode-enable') === 'true');
+
+  React.useEffect(() => {
+    localStorage.setItem('dark-mode-enable', dark);
+  }, [dark]);
+
   const toggleTheme = () => {
-    if (theme === 'light-mode-enable' || theme === null) {
-      setTheme('dark-mode-enable');
-    } else {
-      setTheme('light-mode-enable');
-    }
+    setDark(!dark);
   };
-  useEffect(() => {
-    localStorage.setItem('theme', theme);
-  }, [theme]);
 
   const ToggleModeInput = () => {
     return (
-      <div>
-        <input type="checkbox" className="d-none toggle-custom-checkbox" id="toggle-dark" defaultChecked={theme === 'dark-mode-enable' ? 'checked' : ''} />
+      <>
+        <input type="checkbox" className="d-none toggle-custom-checkbox" id="toggle-dark" defaultChecked={dark === true ? 'checked' : ''} />
         <label className="toggle-custom margin-left-xs margin-right-xs" htmlFor="toggle-dark" onClick={toggleTheme}></label>
-      </div>
+      </>
     );
   };
 
   return (
-    <div className={`white-bg ${theme}`}>
+    <div className={`white-bg ${dark ? 'dark-mode-enable' : 'light-mode-enable'}`}>
       <Header children={<ToggleModeInput />} />
       <HeaderHome />
       <DescPerso />

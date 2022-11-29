@@ -1,11 +1,9 @@
-* {
-  box-sizing: border-box;
-  font-variant-ligatures: none;
-}
-
+*,
 *::before,
 *::after {
   box-sizing: border-box;
+  font-variant-ligatures: none;
+  @include transition-custom(all);
 }
 
 //tricks to target IE 10 and above only
