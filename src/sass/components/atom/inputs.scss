@@ -8,8 +8,12 @@
   &-checkbox {
     &:checked {
       ~ .toggle-custom {
-        justify-content: flex-end;
         background-color: var(--primary);
+
+        &::before {
+          transform: translateX(20px);
+          @include transition-custom(all);
+        }
       }
     }
   }

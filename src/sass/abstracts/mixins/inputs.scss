@@ -41,9 +41,7 @@
 }
 
 @mixin toggle-custom {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  display: block;
   border-radius: 20px;
   background-color: var(--secondary);
   padding: calc(#{$gutter} / 5);
@@ -58,6 +56,7 @@
     width: calc((2 * #{$gutter} - 4px));
     background-color: var(--white);
     border-radius: 100%;
+    transform: translateX(0);
     @include transition-custom(all);
   }
 }
