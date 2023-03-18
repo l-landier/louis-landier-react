@@ -1,0 +1,35 @@
+@property --gradient-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+
+  @keyframes rotation {
+    0% {
+        --gradient-angle: 0deg;
+    }
+    100% {
+        --gradient-angle: 360deg;
+    }
+  }
+
+.gradient-button {
+    position: relative;
+    overflow: visible;
+    
+    &:before, 
+    &:after {
+        content: "";
+        position: absolute;
+        inset: calc($gutter / -4);
+        background: conic-gradient(from var(--gradient-angle), $primary, $secondary, $third, $secondary, $primary);
+        animation: rotation 8s linear infinite;
+        border-radius: 10px;
+    } 
+
+    &:after {
+        filter: blur(.5rem);
+    }
+
+  }
+  

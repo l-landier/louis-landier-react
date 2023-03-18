@@ -17,9 +17,11 @@ export const HeaderHome = () => {
                 Intégrateur web, avec une formation de designer web.
               </Title>
               <div className="col-xs-12 col-sm-12 col-md-7 padding-0 display-flex justify-space-between">
-                <Link classType="secondary" href="#experience">
-                  Mon expérience
-                </Link>
+                <div className="gradient-button">
+                  <Link classType="secondary" href="#experience">
+                    Mon expérience
+                  </Link>
+                </div>
                 <Link classType="primary" href="#contact">
                   Me contacter
                 </Link>
