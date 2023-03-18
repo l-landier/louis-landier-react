@@ -19,19 +19,19 @@
   box-shadow: $gradient-primary;
   position: relative;
   overflow: hidden;
-  transition: all 1s ease;
+  @include transition-custom(all);
 
   &::after {
     content: "";
     display: block;
     position: absolute;
     top: 0;
-    right: 0;
+    right: -20%;
     height: 100%;
     width: 0;
     background: $background-hover;
     z-index: 1;
-
+    transform: skewX(-40deg);
     transition: all 1s ease;
   }
 
@@ -50,10 +50,10 @@
     color: $color-text-hover;
     background-color: $background-hover;
     cursor: pointer;
-    transition: all 1s ease;
+    @include transition-custom(all);
 
     &::after {
-      width: 300%;
+      width: 150%;
       transition: all 1s ease;
     }
   }

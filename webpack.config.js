@@ -44,7 +44,7 @@ module.exports = {
         test: /\.(woff2?|ttf|woff|eot|svg|jpg|png|gif|mp3|pdf)$/,
         loader: "file-loader",
         options: {
-          name: '[name].[contenthash].[ext]',
+          name: '[name].[ext]',
         },
       },
     ],
