@@ -17,30 +17,37 @@ const listSkillsHome = [
   {
     src: sassSvg,
     alt: 'icone sass',
+    text: "sass structure, atomic design, optimisation, gestion de la surcharge"
   },
   {
     src: cssSvg,
     alt: 'icone css3',
+    text: "display flex, display grid, caniuse pour la gestion des nouvelles propriétés css"
   },
   {
     src: htmlSvg,
     alt: 'icone html',
+    text: "HTML 5, mobile first"
   },
   {
     src: jsSvg,
     alt: 'icone javascript',
+    text: "devellopeur front end junior"
   },
   {
     src: githubSvg,
     alt: 'icone github',
+    text: "expérimenté sur git, rebase / merge, gestion de conflit"
   },
   {
     src: sketchSvg,
     alt: 'icone sketch',
+    text: "ancien designer, bonne maitrise des outils des designer"
   },
   {
     src: reactSvg,
     alt: 'icone sketch',
+    text: "construction des composants atomic sur plusieurs projet"
   }
 ]
 

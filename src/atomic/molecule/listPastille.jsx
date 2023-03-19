@@ -24,14 +24,23 @@ export const ListPastille: StatelessFunctionalComponent<Props> = ({
             className="col-xs-5 col-sm-3 display-flex justify-center margin-bottom-xl"
             key={listElem.src}
           >
-            <img
-              src={listElem.src}
-              className="responsive-img"
-              alt={listElem.alt}
-              width="150"
-              height="auto"
-              loading="lazy"
-            />
+            <div class="flip-card">
+            <div class="flip-card-inner display-flex justify-center align-items-center">
+              <div class="flip-card-front display-flex justify-center align-items-center">
+                <img
+                  src={listElem.src}
+                  className="responsive-img"
+                  alt={listElem.alt}
+                  width="150"
+                  height="auto"
+                  loading="lazy"
+                />
+              </div>
+              <div class="flip-card-back display-flex justify-center align-items-center flex-column third-bg padding-sm border-r-round">
+                <p>{listElem.text}</p>
+              </div>
+            </div>
+          </div>
           </div>
         ))}
       </div>
