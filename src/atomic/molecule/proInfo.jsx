@@ -12,16 +12,18 @@ export const ProInfo = () => {
           Me contacter
         </Title>
         <div className="row">
-          <div className="col-xs-12 col-sm-6 col-md-5 display-flex-tablet-desktop justify-space-between">
+          <div className="col-xs-12 col-sm-6 col-md-5 display-flex-tablet-desktop justify-space-between margin-bottom-sm">
             <div>
-              <Link href={cvPro} target="_blank" classType="primary" className="margin-bottom-sm">
+              <Link href={cvPro} target="_blank" classType="primary">
                 Voir mon CV
               </Link>
             </div>
             <div>
-              <Link href="https://www.linkedin.com/in/louis-landier-a00b8b28/" target="_blank" classType="secondary" className="margin-bottom-sm">
-                Voir mon Profil linkedin
-              </Link>
+              <div className="gradient-button">
+                <Link href="https://www.linkedin.com/in/louis-landier-a00b8b28/" target="_blank" classType="secondary">
+                  Voir mon Profil linkedin
+                </Link>
+              </div>
             </div>
           </div>
         </div>

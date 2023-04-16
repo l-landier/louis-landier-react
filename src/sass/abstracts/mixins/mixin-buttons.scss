@@ -19,6 +19,9 @@
   box-shadow: $gradient-primary;
   position: relative;
   overflow: hidden;
+  leading-trim: both;
+  text-edge: cap alphabetic;
+  z-index: 1;
   @include transition-custom(all);
 
   &::after {
@@ -48,7 +51,6 @@
     text-decoration: none;
     outline-width: 0;
     color: $color-text-hover;
-    background-color: $background-hover;
     cursor: pointer;
     @include transition-custom(all);
 

@@ -1,14 +1,15 @@
+@use "sass:math";
 .navbar-menu-icon {
   display: block;
-  width: 3 * $gutter;
+  width: calc(3 * $gutter);
   height: 4px;
   border-radius: $radius-button;
   background: var(--primary);
   @include transition-custom(all);
 
   &:nth-child(2n) {
-    margin-top: $gutter / 2;
-    margin-bottom: $gutter / 2;
+    margin-top: calc($gutter / 2);
+    margin-bottom: calc($gutter / 2);
   }
 
   @media (min-width: $screen-mobile-min) {
