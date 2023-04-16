@@ -10,8 +10,8 @@ module.exports = {
     index: "./src/index.jsx",
     style: "./src/sass/style.scss",
   },
-  //mode: "production",
-  mode: "development",
+  mode: "production",
+  //mode: "development",
   resolve: { modules: [path.resolve(__dirname, "src"), "node_modules"] },
   devServer: { contentBase: path.join(__dirname, "src") },
   module: {
