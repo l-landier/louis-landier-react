@@ -36,7 +36,7 @@ export const ListPastille: StatelessFunctionalComponent<Props> = ({
                   loading="lazy"
                 />
               </div>
-              <div class="flip-card-back display-flex justify-center align-items-center flex-column third-bg padding-sm border-r-round">
+              <div class="flip-card-back display-flex justify-center align-items-center flex-column third-bg padding-sm border-r-round text-align-center">
                 <p>{listElem.text}</p>
               </div>
             </div>
