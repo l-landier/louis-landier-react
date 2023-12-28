@@ -1,0 +1,20 @@
+.label-custom {
+    top: calc($gutter * 1.6);
+    left: calc(2.1 * $gutter);
+    opacity: 0.5;
+    height: 0;
+    overflow: hidden;
+    @include transition-custom(top, opacity);
+}
+
+.input-custom {
+    &:focus {
+        ~ .label-custom {
+            top: calc(0.4 * $gutter);
+            opacity: 1;
+            height: calc(2 * $gutter);
+            overflow: visible;
+            @include transition-custom(top, opacity);
+        }
+    }
+}

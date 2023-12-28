@@ -21,6 +21,10 @@ const inputType = {
   success: 'input-custom input-success',
 };
 
+const labelType = {
+  custom: 'label-custom position-absolute z-ind-2',
+};
+
 export const Input: StatelessFunctionalComponent<Props> = ({
   className,
   classType,
@@ -35,6 +39,7 @@ export const Input: StatelessFunctionalComponent<Props> = ({
   ...props
 }: Props) => {
   let styleClass = classType in inputType ? inputType[classType] : '';
+  let labelClass = classType in labelType ? labelType[classType] : '';
 
   if (className && className !== '') {
     styleClass = `${styleClass} ${className}`;
@@ -42,31 +47,37 @@ export const Input: StatelessFunctionalComponent<Props> = ({
 
   if (type === 'textarea') {
     return (
-      <textarea
+      <div className="position-relative">
+        <textarea
+          className={styleClass}
+          cols={cols}
+          onBlur={onBlur}
+          onChange={onChange}
+          placeholder={placeholder}
+          rows={rows}
+          step={step}
+          type={type}
+          value={value}
+          {...props}
+        />
+        <label className={labelClass}>{placeholder}</label>
+      </div>
+    );
+  }
+  return (
+    <div className="position-relative">
+      <input
         className={styleClass}
-        cols={cols}
         onBlur={onBlur}
         onChange={onChange}
         placeholder={placeholder}
-        rows={rows}
         step={step}
         type={type}
         value={value}
         {...props}
       />
-    );
-  }
-  return (
-    <input
-      className={styleClass}
-      onBlur={onBlur}
-      onChange={onChange}
-      placeholder={placeholder}
-      step={step}
-      type={type}
-      value={value}
-      {...props}
-    />
+      <label className={labelClass}>{placeholder}</label>
+    </div>
   );
 };
 
