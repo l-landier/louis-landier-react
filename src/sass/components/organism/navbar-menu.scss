@@ -30,17 +30,21 @@
     }
     ~ {
       label .navbar-menu-icon {
-        display: none;
-
         &:first-child {
           display: block;
           @include transition-custom(all);
-          transform: rotate(45deg) translateX(3px);
+          transform: rotate(225deg) translate(-7px, -5px);
         }
+
+        &:nth-child(2n) {
+          width: 0;
+          @include transition-custom(all);
+        }
+
         &:last-child {
           display: block;
           @include transition-custom(all);
-          transform: rotate(-45deg) translateX(3px);
+          transform: rotate(-225deg) translate(-7px, 6px);
         }
       }
     }

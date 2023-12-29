@@ -100,8 +100,8 @@
   align-self: flex-start;
 }
 
-.align-self-start-t {
-  @media (max-width: $screen-tablet) {
+.align-self-start-m {
+  @media (max-width: $screen-mobile) {
     align-self: flex-start;
   }
 }
