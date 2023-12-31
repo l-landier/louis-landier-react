@@ -18,8 +18,6 @@ export const ListPastille: StatelessFunctionalComponent<Props> = ({
     threshold: 0,
   });
 
-  console.log("inview: ", inView);
-
   return (
     <Container classType="sepSection">
       <Container classType="container">
