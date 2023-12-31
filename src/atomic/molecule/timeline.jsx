@@ -55,11 +55,11 @@ export const Timeline = () => {
                 <Title
                   classType="h3"
                   tagType="h3"
-                  className="margin-bottom-sm dark-red"
+                  className="margin-bottom-sm dark-red fade-from-right"
                 >
                   {titre}
                 </Title>
-                <p>
+                <p className="fade-from-right">
                   <span className="text-bold">{bold}</span>
                   {desc}
                 </p>

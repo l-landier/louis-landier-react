@@ -1,0 +1,51 @@
+@keyframes fade-from-right {
+    from { 
+        transform: translateX(500px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.fade-from-right {
+    animation: fade-from-right linear;
+    animation-timeline: view();
+    animation-range-start: 0; // commence à cette distance du bas de l'écran
+    animation-range-end: 50vh; // fini à cette distance du haut de l'écran
+}
+
+@keyframes fade-from-left {
+    from { 
+        transform: translateX(-500px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.fade-from-left {
+    animation: fade-from-left linear;
+    animation-timeline: view();
+    animation-range-start: 0; // commence à cette distance du bas de l'écran
+    animation-range-end: 50vh; // fini à cette distance du haut de l'écran
+}
+
+@keyframes fade-from-top {
+    from { 
+        height: 0;
+    }
+    to {
+        height: 100%;
+    }
+}
+
+.fade-from-top {
+    animation: fade-from-top linear;
+    animation-timeline: view();
+    animation-range-start: 0; // commence à cette distance du bas de l'écran
+    animation-range-end: 50vh; // fini à cette distance du haut de l'écran
+}

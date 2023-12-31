@@ -4,24 +4,11 @@ import type { StatelessFunctionalComponent } from "react";
 
 import { Link, ToggleDarkMode } from 'atomic';
 
+import { listNav } from "src/content/content";
+
 type Props = {
   children: () => Node
 };
-
-const listNav = [
-  {
-    item: 'Accueil',
-    link: '#accueil'
-  },
-  {
-    item: 'Expérience',
-    link: '#experience'
-  },
-  {
-    item: 'Contact',
-    link: '#contact'
-  },
-]
 
 export const NavBar: StatelessFunctionalComponent<Props> = ({
   children

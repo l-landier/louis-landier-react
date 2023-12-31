@@ -3,7 +3,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 
 import { Home } from './components/home.jsx';
@@ -14,10 +13,8 @@ export const CustomRouter = () => (
   <Router>
     <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/creation" component={Creation} />
-        {/*
+        <Route exact path="/creation" component={Creation} />
         <Route path="*" component={NoMatch} />
-        */}
     </Switch>
   </Router>
 );
