@@ -189,3 +189,27 @@ $screen-sm: $screen-mobile-min;
 $screen-md: $screen-tablet-min;
 $screen-lg: $screen-laptop;
 $font-size-base: $body-font-size;
+
+
+/////////////////////////////////////////////////////////
+// Animation Default Settings                          //
+/////////////////////////////////////////////////////////
+
+
+// Base module settings
+$base-duration					: 1s;           // used in 1-base module
+$base-origin 					: top center;
+$base-degrees 					: 30deg;        // used in lightspeed & special modules
+$base-fill-mode					: both;
+$base-iteration-count			: infinite;
+
+$base-timing-function-in		: ease-in;
+$base-timing-function-out		: ease-out;
+$base-timing-function-in-out	: ease-in-out;
+
+$base-distance					: 10px; 		// used in fade, shake and bounce modules
+$base-distance-big				: 1000px;       // used in fadeBig and bounce modules
+$flipper-perspective			: 400px;
+$flipper-translate 				: 150px;
+$flipper-degrees 				: 10deg;
+$flipper-degrees-max 			: 90deg;

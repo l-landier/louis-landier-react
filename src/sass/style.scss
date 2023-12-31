@@ -8,6 +8,7 @@
 @import "abstracts/mixins/grid-framework";
 @import "abstracts/mixins/grid";
 @import "abstracts/mixins/inputs";
+@import "abstracts/mixins/animated";
 @import "abstracts/grid";
 
 // 2. vendors
@@ -18,6 +19,10 @@
 
 // 4. components - atom, molecule, organism
 // components atom
+//animations
+@import "components/animations/animated";
+@import "components/animations/flip";
+@import "components/animations/animation-scroll";
 @import "components/atom/primary-button";
 @import "components/atom/secondary-button";
 @import "components/atom/gradient-button";

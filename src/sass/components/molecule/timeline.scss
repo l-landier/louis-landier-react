@@ -14,6 +14,11 @@
     top: -$gutter;
     left: 0;
     z-index: 1;
+
+    animation: fade-from-left linear;
+    animation-timeline: view();
+    animation-range-start: 0; // commence à cette distance du bas de l'écran
+    animation-range-end: 50vh; // fini à cette distance du haut de l'écran
   }
 
   &::after {
@@ -25,6 +30,11 @@
     position: absolute;
     top: 0;
     left: 22px;
+
+    animation: fade-from-top linear;
+    animation-timeline: view();
+    animation-range-start: 0; // commence à cette distance du bas de l'écran
+    animation-range-end: 50vh; // fini à cette distance du haut de l'écran
   }
 
   &:last-child {
